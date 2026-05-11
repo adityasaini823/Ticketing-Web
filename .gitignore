@@ -18,7 +18,7 @@ logs/
 # Mac / system files
 .DS_Store
 
-
+**/node_modules/
 
 auth/node_modules
 auth/.env
