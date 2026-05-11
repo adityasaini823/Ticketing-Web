@@ -1,1 +1,51 @@
-auth/node_modules/
+# Node modules
+node_modules/
+
+# Environment files
+.env
+*.env
+
+# Service account keys
+serviceKey.json
+
+# Logs
+logs/
+*.log
+
+# VSCode settings
+.vscode/
+
+# Mac / system files
+.DS_Store
+
+
+
+auth/node_modules
+auth/.env
+auth/.env
+auth/serviceKey.json
+.env
+auth/.vscode
+auth/logs
+
+common_services/userInvitations/node_modules
+common_services/userInvitations/.env
+common_services/userInvitations/.env
+common_services/userInvitations/.vscode
+common_services/userInvitations/logs
+common_services/userInvitations/serviceKey.json
+/node_modules
+
+common_services/chat/node_modules
+common_services/chat/.env
+common_services/chat/.vscode
+common_services/chat/serviceKey.json
+common_services/serviceKey.json
+
+
+ai_services/node_modules
+ai_services/.env
+ai_services/.vscode
+ai_services/serviceKey.json
+ai_services/logs
+
