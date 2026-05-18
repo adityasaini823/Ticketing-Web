@@ -15,12 +15,13 @@ router.post("/signup",[
         throw new RequestValidationError(errors.array());
     }
      const existingUser = await User.findOne({email});
+    //  console.log("here");
      if(existingUser){
         console.log("User already exists with email: ", email);
         throw new BadRequestError("User already exists");
      }
      const user = User.build({email,password});
-     await user.save;
+     await user.save();
     return res.status(200).json({msg: "User created successfully",user});
 
 });
