@@ -3,6 +3,7 @@ import {body,validationResult} from 'express-validator';
 import { RequestValidationError } from '../errors/request-validation-error';
 import { BadRequestError } from '../errors/bad-request-error';
 import { User } from '../models/User';
+import jwt from 'jsonwebtoken';
 const router = express.Router();
 
 router.post("/signup",[
@@ -21,7 +22,14 @@ router.post("/signup",[
         throw new BadRequestError("User already exists");
      }
      const user = User.build({email,password});
+     // generate JWT
      await user.save();
+     const userJwt = jwt.sign({
+        id: user._id,
+        email: user.email},"asdfasdf");
+
+    // store jwt on session object  
+    req.session = {jwt: userJwt};
     return res.status(200).json({msg: "User created successfully",user});
 
 });
