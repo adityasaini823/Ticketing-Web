@@ -26,7 +26,9 @@ router.post("/signup",[
      await user.save();
      const userJwt = jwt.sign({
         id: user._id,
-        email: user.email},"asdfasdf");
+        email: user.email},
+        process.env.JWT_KEY!
+    );
 
     // store jwt on session object  
     req.session = {jwt: userJwt};
