@@ -8,7 +8,7 @@ import jwt from 'jsonwebtoken';
 router.post("/signin", validateRequest, async (req, res) => {
     const { email, password } = req.body;
     // find excisting user
-    const excistingUser = User.findOne({ email });
+    const excistingUser = await User.findOne({ email });
     if(!excistingUser){
         throw new BadRequestError("Invalid credentials");
     }
