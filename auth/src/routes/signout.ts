@@ -2,7 +2,8 @@ import express from 'express';
 const router = express.Router();
 
 router.post("/signout",(req,res)=>{
-    res.send("Welcome to signout route");
+    req.session = null;
+    res.send({});
 });
 
 export {router as signoutRouter};
