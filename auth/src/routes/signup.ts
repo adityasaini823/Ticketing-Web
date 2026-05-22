@@ -37,7 +37,7 @@ router.post(
 
     // store jwt on session object
     req.session = { jwt: userJwt };
-    return res.status(200).json({ msg: "User created successfully", user });
+    return res.status(201).json({ msg: "User created successfully", user });
   },
 );
 
