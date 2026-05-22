@@ -15,9 +15,9 @@ it("give the logged in user details", async () => {
         throw new Error("Cookie not set after signup");
     }
     const response= await request(app)
-        .get("/api/users/currrentuser")
+        .get("/api/users/currentuser")
         .set("Cookie", cookie)
         .send({})
         .expect(200);
-        console.log(response.body);
+    expect(response.body.currentUser.email).toEqual("test@test.com");
 });
