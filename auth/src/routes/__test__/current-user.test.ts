@@ -21,3 +21,11 @@ it("give the logged in user details", async () => {
         .expect(200);
     expect(response.body.currentUser.email).toEqual("test@test.com");
 });
+
+it("when the user is not logged in", async () => {
+    const response= await request(app)
+        .get("/api/users/currentuser")
+        .send({})
+        .expect(200);
+    expect(response.body.currentUser).toEqual(null);
+});
