@@ -1,14 +1,17 @@
 "use client";
 import { useState } from "react";
+import axios from "axios";
 const Signup = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
     // Handle signup logic here, e.g., send data to backend API
-    console.log("Email:", email);
-    console.log("Password:", password);
-    alert("Signup successful!"); // Replace with actual success handling
+    const response = await axios.post("api/user/signup",{
+        email,
+        password
+    })
+    console.log(response.body);
   };
   return (
     <form onSubmit={handleSubmit}>
