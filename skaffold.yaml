@@ -13,6 +13,14 @@ build:
         manual:
           - src: '**/*.ts'
             dest: .
+    - image: mohitsainihr75/client
+      context: client
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
+          - src: '**/*.js'
+            dest: .
 
 manifests:
   rawYaml:
