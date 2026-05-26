@@ -7,7 +7,7 @@ const Signup = () => {
   const handleSubmit = async(e) => {
     e.preventDefault();
     // Handle signup logic here, e.g., send data to backend API
-    const response = await axios.post("api/user/signup",{
+    const response = await axios.post("/api/users/signup",{
         email,
         password
     })
