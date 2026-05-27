@@ -1,4 +1,4 @@
-"use client";
+// "use client";
 import { useState } from "react";
 import axios from "axios";
 const Signup = () => {
@@ -44,7 +44,7 @@ const Signup = () => {
         <button type="submit" >Signup</button>
       </div>
       <div>
-        <p className="text-danger">{errors}</p>
+        <p className="text-red-500">{errors}</p>
       </div>
     </form>
   );
