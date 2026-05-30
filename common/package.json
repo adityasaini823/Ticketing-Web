@@ -1,6 +1,6 @@
 {
-  "name": "adityasainiorg/common",
-  "version": "1.0.0",
+  "name": "@adityasaini2468/ticketing-common",
+  "version": "1.0.2",
   "description": "",
   "main": "./build/index.js",
   "types": "./build/index.d.ts",
