@@ -19,7 +19,6 @@ const Signin = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     await doRequest();
-    Router.push("/");
   };
 
   return (
