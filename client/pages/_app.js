@@ -1,5 +1,5 @@
 import "../styles/globals.css"; // Make sure this path points to your CSS file
-import buildClient from "../api/build-client";
+import {buildClient} from "../api/build-client";
 import Header from "../components/header";
 
 export default function App({ Component, pageProps }) {
