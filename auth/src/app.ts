@@ -12,7 +12,10 @@ const app= express();
 app.set("trust proxy", true);
 app.use(cookieSession({
     signed: false,
-    secure: process.env.NODE_ENV !== "test"
+    // secure: process.env.NODE_ENV !== "test",
+    secure: process.env.NODE_ENV === "production",
+    // If you are testing locally or using HTTP inside k8s without TLS termination,
+    // keep secure false so the cookie can still be set by the browser.
 }));
 app.use(express.json());
 app.use("/api/users", currentUserRouter);
