@@ -1,6 +1,5 @@
 import axios from 'axios';
 export  function buildClient({ req }) {
-    console.log('Building client with req:', req ? 'Server-side' : 'Client-side');
      if(typeof window === 'undefined') {
         // we are on the server, make request to ingress-nginx-controller service
         //route= http://name-of-service.namespace.svc.cluster.local/path-to-api

@@ -1,7 +1,8 @@
 import express from 'express';
 const router = express.Router();
+import {requireAuth} from "@adityasaini2468/ticketing-common";
 import { currentUser } from '@adityasaini2468/ticketing-common';
-router.get("/currentuser",currentUser,async (req,res)=>{
+router.get("/currentuser",currentUser,requireAuth,async (req,res)=>{
     return res.status(200).json({ currentUser: req.currentUser || null });
 });
 
