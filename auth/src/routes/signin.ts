@@ -1,8 +1,8 @@
 import express from 'express';
 const router = express.Router();
-import { validateRequest } from "../middlewares/validate-request";
+import { validateRequest } from "@adityasaini2468/ticketing-common";
 import { User } from '../models/User';
-import { BadRequestError } from '../errors/bad-request-error';
+import { BadRequestError } from '@adityasaini2468/ticketing-common';
 import { Password } from '../services/password';
 import jwt from 'jsonwebtoken';
 router.post("/signin", validateRequest, async (req, res) => {

@@ -1,11 +1,15 @@
-interface color{
-    red: number;
-    green: number;
-    blue: number;
-}
-const color: color = {
-    red: 255,
-    green: 10,   
-    blue: 10
-}
-console.log(color)
+// Re-export package public API
+export * from './middlewares/current-user';
+export * from './middlewares/error-handler';
+export * from './middlewares/require-auth';
+export * from './middlewares/validate-request';
+
+export * from './errors/bad-request-error';
+export * from './errors/custom-error';
+export * from './errors/database-connection.error';
+export * from './errors/not-authorized-error';
+export * from './errors/not-found-error';
+export * from './errors/request-validation-error';
+
+// Keep a simple runtime export for backward compatibility if needed
+export const _version = '1.0.6';
