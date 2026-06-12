@@ -12,4 +12,4 @@ export * from './errors/not-found-error';
 export * from './errors/request-validation-error';
 
 // Keep a simple runtime export for backward compatibility if needed
-export const _version = '1.0.6';
+export const _version = '1.0.7';
