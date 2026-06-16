@@ -4,12 +4,14 @@ import mongoose from "mongoose";
 interface TicketAttrs {
   title: string;
   price: number;
+  userId: string;
 }
 
 //interface to describe the properties that a ticket document has
 interface TicketDoc extends mongoose.Document {
   title: string;
   price: number;
+  userId: string;
 }
 //interface to describe the properties that a ticket model has
 interface TicketModel extends mongoose.Model<TicketDoc> {
@@ -26,6 +28,10 @@ const ticketSchema = new mongoose.Schema(
       type: Number,
       required: true,
     },
+    userId: {
+      type: String,
+      required: true,
+    }
   },
   {
     toJSON: {
