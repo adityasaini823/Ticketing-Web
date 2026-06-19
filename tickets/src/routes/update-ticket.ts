@@ -3,7 +3,7 @@ import { requireAuth } from "@adityasaini2468/ticketing-common";
 import { BadRequestError } from "@adityasaini2468/ticketing-common";
 import { validateRequest } from "@adityasaini2468/ticketing-common";
 import { body } from "express-validator";
-import { Ticket } from "../models/Ticket";
+import { Ticket } from "../models/ticket";
 const router = Router();
 
 router.put("/:id",
