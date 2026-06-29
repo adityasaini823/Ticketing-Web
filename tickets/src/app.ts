@@ -3,7 +3,9 @@ import { NotFoundError } from '@adityasaini2468/ticketing-common';
 import { errorHandler } from '@adityasaini2468/ticketing-common';
 import cookieSession from "cookie-session";
 import { newTicketRouter } from './routes/new';
-import { requireAuth } from "@adityasaini2468/ticketing-common";
+import { showTicketRouter } from './routes/show';
+import { indexTicketRouter } from './routes/index';
+import { updateTicketRouter } from './routes/update';
 import { currentUser } from '@adityasaini2468/ticketing-common';
 const app= express();
     
@@ -18,7 +20,9 @@ app.use(cookieSession({
 app.use(express.json());
 app.use(currentUser);
 app.use("/api/tickets", newTicketRouter);
-app.use(express.json());
+app.use(showTicketRouter);
+app.use(indexTicketRouter);
+app.use(updateTicketRouter);
 
 app.use(async (req, res) => {
   throw new NotFoundError();
